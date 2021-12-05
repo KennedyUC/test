@@ -41,28 +41,31 @@ When executed, terraform runs through these files in an alphabetical order and t
 
 # **Integrating the AWS S3 Module and SQS Module**
 The configured AWS EKS Cluster, S3-Bucket and SQS-queue are integrated in a repository by calling them as modules using their respective repo addresses.
-
-**Requirements**  
+  
 | Name      | Version |
 |-----------|---------|
 | Terraform | 0.14.0+ |
 | AWS       | 3.0+    |
 
-**Providers**  
-| Name | Version |
+| Provider | Version |
 |------|---------|
 | AWS  | 3.0+    |
  
   
-**Modules**
-| Name        | Source                                         |
+| Module        | Source                                         |
 |-------------|------------------------------------------------|
 | EKS Cluster | https://github.com/MavenCode/terraform-aws-eks |
 | AWS S3      | https://github.com/MavenCode/terraform-aws-s3  |
 | AWS SQS     | http://github.com/MavenCode/terraform-aws-sqs  |  
 
-**Inputs**  
-
+  
+| Input       | Description                                                                   |
+|-------------|-------------------------------------------------------------------------------|
+| access_key  | unique key used to get programmatic access to the AWS resources               |
+| secret_key  | unique key used to get programmatic access to the AWS resources               |
+| region      | This is the AWS region to send the request, based on the users specification  |
+| environment | This can be dev, prod or staging environment                                  |
+| vpc_id      | This defines the virtual private cloud where the EKS cluster will be deployed |
 
 ## **Main Terraform File**
 ### **Bootstrapping the AWS EKS Cluster Module**  
